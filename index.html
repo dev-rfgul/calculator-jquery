@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          var buttonValue = $(this).text();
+          var inputField = $("#display").val();
+          if (buttonValue === "=") {
+            var expression = inputField;
+            var result = calculateExpression(expression);
+            $("#display").val(result);
+          } else {
+            $("#display").val(inputField + buttonValue);
+          }
+
+          $(".btn").click(function () {
+            if ($(this).text() === "C") {
+              $("#display").val("");
+            }
+          });
+
+          function calculateExpression(expression) {
+            try {
+              return eval(expression);
+            } 
+            catch (error) {
+              return "Error";
+              $("#display").val(error);
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Calculator Project using JQuery</h1>
+      <h2>(dev rf-gul)</h2>
+      <div class="display">
+        <input class="input" type="text" id="display" />
+      </div>
+      <div class="numbers">
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">+</button>
+        <br />
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+        <button class="btn">-</button>
+        <br />
+        <button class="btn">7</button>
+        <button class="btn">8</button>
+        <button class="btn">9</button>
+        <button class="btn">/</button>
+        <br />
+        <button class="btn">0</button>
+        <button class="btn">*</button>
+        <button class="btn">=</button>
+        <button id="c"class="btn">C</button>
+      </div>
+    </div>
+  </body>
+</html>
