@@ -8,6 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script>
+
+      // hello i am here and again racalling the concepts of jquery an
+          // jquery is basically a library of javascript and it is used to make the code more efficient and easy to understand and write 
+          // it is basically a function based library in which you get function for almost everything including animations and effects.
+          // some disadvantages of jquery are that its very old, slow and not suitable for large scale applications.
+          // some advantages of jquery are that it is very easy to use and understand and its very efficient for small scale applications.
+          
       $(document).ready(function () {
         $("button").click(function () {
           var buttonValue = $(this).text();
@@ -20,10 +27,14 @@
             $("#display").val(inputField + buttonValue);
           }
 
+          
+
           $(".btn").click(function () {
             if ($(this).text() === "C") {
               $("#display").val("");
             }
+
+
           });
 
           function calculateExpression(expression) {
